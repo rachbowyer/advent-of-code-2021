@@ -57,7 +57,8 @@
 ;; The only tricky thing is moving from the exact solution to an integer
 ;; solution. But the function we are optimising is a quadratic in p - the
 ;; alignment position, so increases in either direction from the minimum.
-;; Therefore, try the nearest int on either is the optimal integer solution.
+;; Therefore, the optimal integer solution is either the floor or the ceiling
+;; of the mean.
 
 (defn day7-solution-part1 []
   (-> "input.day7.txt"
