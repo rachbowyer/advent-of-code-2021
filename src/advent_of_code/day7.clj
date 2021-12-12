@@ -76,5 +76,9 @@
 
 ;; 90040997
 
+;; Except the mean is NOT actually the minimiser for the sum of the fuel
+;; costs. Further, in the original problem the fuel cost is only defined
+;; where d is a non-negative integer. Hence, the cost function is not
+;; differentiable. At this point, better to just brute force the answer.
 
 
