@@ -16,21 +16,21 @@
                      :a true
                      :B false
                      :LN false
-                     :dc true)
+                     :dc true))
 
-  (deftest count-paths-test
-    (are [allow-ssc expected]
-      (= expected (#'d12/count-paths allow-ssc example-adjacency-list))
-      false 10
-      true 36)
+(deftest count-paths-test
+  (are [allow-ssc expected]
+    (= expected (#'d12/count-paths allow-ssc example-adjacency-list))
+    false 10
+    true 36)
 
-    (are [filename allow-ssc expected]
-      (= expected (#'d12/count-paths allow-ssc
-                    (#'d12/text->adjacency-list (#'d12/parse-file filename))))
-      "input.day12.test1.txt" false 19
-      "input.day12.test1.txt" true 103
-      "input.day12.test2.txt" false 226
-      "input.day12.test2.txt" true 3509)))
+  (are [filename allow-ssc expected]
+    (= expected (#'d12/count-paths allow-ssc
+                  (#'d12/text->adjacency-list (#'d12/parse-file filename))))
+    "input.day12.test1.txt" false 19
+    "input.day12.test1.txt" true 103
+    "input.day12.test2.txt" false 226
+    "input.day12.test2.txt" true 3509))
 
 
 

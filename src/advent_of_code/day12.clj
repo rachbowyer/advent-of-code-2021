@@ -20,27 +20,25 @@
   (graph node))
 
 (defn- explore [graph allow-ssc path single-small-cave node]
-  (let [path-set (into #{} path)
-        new-path (cons node path)]
-    (if (= node :end)
-      [new-path]
-
-      (let [[allowed new-scc]
-            (if (and (small-cave? node) (path-set node))
-              (cond
-                (not allow-ssc)           [false nil]
-                (= node :start)           [false nil]
-                (nil? single-small-cave)  [true node]
-                :else                     [false nil])
-              [true single-small-cave])]
-        (if (not allowed)
-          []
-          (let [successors (get-successors graph node)]
-            (mapcat (fn [e] (explore graph allow-ssc new-path new-scc e))
-                    successors)))))))
+  (if (= node :end)
+    1
+    (let [[allowed new-scc]
+          (if (and (small-cave? node) (path node))
+            (cond
+              (not allow-ssc)           [false nil]
+              (= node :start)           [false nil]
+              (nil? single-small-cave)  [true node]
+              :else                     [false nil])
+            [true single-small-cave])]
+      (if allowed
+        (let [successors (get-successors graph node)]
+          (reduce + (map (fn [e]
+                           (explore graph allow-ssc (conj path node) new-scc e))
+                  successors)))
+        0))))
 
 (defn- count-paths [allow-ssc graph]
-  (count (explore graph allow-ssc '() nil :start)))
+  (explore graph allow-ssc #{} nil :start))
 
 (defn day12-solution-part1 []
   (->> "input.day12.txt" parse-file text->adjacency-list
@@ -50,4 +48,4 @@
   (->> "input.day12.txt" parse-file text->adjacency-list
       (count-paths true)))
 
-;;83475 - takes around 3 secs
+;;83475 - takes around 2 secs
