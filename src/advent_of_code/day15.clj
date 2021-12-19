@@ -87,4 +87,8 @@
 ;; 2. It is complete. This means that first time it sees a node it has found the
 ;;    shortest distance to the node. This avoids needing to update distances
 ;;    to successors later."
+;;
+;; If the heuristic is set to 0 (then becomes a uniform cost search). Funnily
+;; enough this speeds things up as the heuristic is not helping much and takes
+;; time to calculate
 
