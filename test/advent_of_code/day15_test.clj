@@ -1,6 +1,7 @@
 (ns advent-of-code.day15-test
-  (:require [clojure.test :refer :all]
-            [advent-of-code.day15 :as d15]))
+  (:require
+    [advent-of-code.day15 :as d15]
+    [clojure.test :refer :all]))
 
 (def example-grid
   [[1 1 6 3 7 5 1 7 4 2]
