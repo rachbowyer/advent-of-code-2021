@@ -70,11 +70,11 @@
     (let [bool->int (fn [b] (if b 1 0))
           content   (or (:literal content) (map decode-ast content))]
       (case type-id
-        4 content
         0 (reduce + content)
         1 (reduce * content)
         2 (apply min content)
         3 (apply max content)
+        4 content
         5 (bool->int (apply > content))
         6 (bool->int (apply < content))
         7 (bool->int (apply = content)))))
