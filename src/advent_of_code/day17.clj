@@ -47,4 +47,5 @@
 ;;
 ;; Reading other answers, it appears that when it returns to y=0, then
 ;; dy = - initial dy. This gives an upper bound on initial dy as
-;; - y-min-t (if y-min-t < 0)
+;; - y-min-t (if y-min-t < 0) as otherwise it will miss the
+;; target area.
