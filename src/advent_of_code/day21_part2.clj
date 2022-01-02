@@ -66,3 +66,8 @@
 
 (defn day21-solution-part2 []
   (->> [1 6] (apply quantum-game) first))
+
+
+;; I found part 2 quite natural to implement via a priority queue. Having
+;; checked other solutions, it looks like I could have come up with a
+;; simpler solution using memoized recursion.
