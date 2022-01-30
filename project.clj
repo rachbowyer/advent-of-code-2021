@@ -8,7 +8,8 @@
                 *assert* true}
 
   :dependencies [[org.clojure/clojure "1.10.3"]
-                 [org.clojure/data.priority-map "1.1.0"]]
+                 [org.clojure/data.priority-map "1.1.0"]
+                 [medley "1.3.0"]]
   :main ^:skip-aot advent-of-code.core
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
