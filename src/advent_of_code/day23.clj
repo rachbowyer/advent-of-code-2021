@@ -290,6 +290,9 @@
                    (reduce conj (pop priority-queue)))]
             (recur (inc i) (conj explored position) new-queue))))))
 
+(defn day23-solution-part1 []
+  (get-lowest-cost starting-position))
+
 
 ;(time (get-lowest-cost starting-position))
 ;"Elapsed time: 171564.41 msecs"
