@@ -1,6 +1,6 @@
 # [advent-of-code 2021](https://adventofcode.com)
 
-![Picture of my final score card][https://raw.githubusercontent.com/rachbowyer/advent-of-code-2021/main/Final-score.png)
+![Picture of my final score card](https://raw.githubusercontent.com/rachbowyer/advent-of-code-2021/main/Final-score.png)
 
 For the first time ever, I tackled Advent of Code. And finally, on the 6 March I 
 completed it. In total my solutions comprised 2348 NCLOC of Clojure.
